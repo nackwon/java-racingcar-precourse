@@ -1,16 +1,17 @@
 package racingcar.utils;
 
+import racingcar.view.RacingCarOutputView;
+
 public class RacingCarUtils {
 
     private static int ZERO = 0;
 
     private static String SPLIT_CODE = ",";
-    private static String ERROR_NUMBER_FORMAT = "[ERROR] 횟수는 정수로 입력하세요.";
 
     public static String[] splitName(String sNames) {
         if(isCheckSplit(sNames))
             return sNames.split(SPLIT_CODE);
-        return null;
+        return new String[]{sNames};
     }
 
     private static boolean isCheckSplit(String sNames) {
@@ -27,12 +28,13 @@ public class RacingCarUtils {
     private static boolean isCheckNumberFormat(String sNumber) {
         try {
             if(Integer.parseInt(sNumber) <= ZERO) {
-                throw new IllegalArgumentException(ERROR_NUMBER_FORMAT);
+                RacingCarOutputView.errorNumberFormat();
+                return false;
             }
         } catch (Exception e) {
-            throw new IllegalArgumentException(ERROR_NUMBER_FORMAT);
+            RacingCarOutputView.errorNumberFormat();
+            return false;
         }
         return true;
     }
-
 }
