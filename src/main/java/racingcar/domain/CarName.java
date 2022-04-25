@@ -8,25 +8,22 @@ public class CarName {
     private static String carName;
 
     public CarName(String carName) {
+        isCheckValidateCarName(carName);
         this.carName = carName;
-
     }
 
     public String getCarName() {
         return carName;
     }
 
-    public static boolean isCheckValidateCarName(String carName) {
+    public static void isCheckValidateCarName(String carName) {
         if (isCheckMaxLength(carName)) {
-            RacingCarOutputView.errorMaxLength();
-            return false;
+            throw new IllegalArgumentException(RacingCarOutputView.errorMaxLength());
         }
 
         if (isCheckEmpty(carName)) {
-            RacingCarOutputView.errorNameEmpty();
-            return false;
+            throw new IllegalArgumentException(RacingCarOutputView.errorNameEmpty());
         }
-        return true;
     }
 
     private static boolean isCheckMaxLength(String carName) {
