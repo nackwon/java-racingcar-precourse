@@ -28,12 +28,10 @@ public class RacingCarUtils {
     private static boolean isCheckNumberFormat(String sNumber) {
         try {
             if(Integer.parseInt(sNumber) <= ZERO) {
-                RacingCarOutputView.errorNumberFormat();
-                return false;
+                throw new IllegalArgumentException(RacingCarOutputView.errorNumberFormat());
             }
         } catch (Exception e) {
-            RacingCarOutputView.errorNumberFormat();
-            return false;
+            throw new IllegalArgumentException(RacingCarOutputView.errorNumberFormat());
         }
         return true;
     }
