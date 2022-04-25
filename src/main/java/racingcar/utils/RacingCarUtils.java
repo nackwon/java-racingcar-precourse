@@ -32,7 +32,7 @@ public class RacingCarUtils {
             throw new IllegalArgumentException(ERROR_NUMBER_FORMAT);
         }
 
-        if(result < ZERO) {
+        if(result <= ZERO) {
             throw new IllegalArgumentException(ERROR_NUMBER_FORMAT);
         }
         return true;
