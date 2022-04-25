@@ -3,10 +3,9 @@ package racingcar.utils;
 public class RacingCarUtils {
 
     private static int ZERO = 0;
-    private static int PROMOTE_NUMBER = 4;
 
     private static String SPLIT_CODE = ",";
-    private static String ERROR_NUMBER_FORMAT = "횟수는 정수로 입력하세요.";
+    private static String ERROR_NUMBER_FORMAT = "[ERROR] 횟수는 정수로 입력하세요.";
 
     public static String[] splitName(String sNames) {
         if(isCheckSplit(sNames))
