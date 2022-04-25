@@ -20,15 +20,15 @@ public class RacingCarOutputView {
         System.out.println(carName + " : " + TrackNumber);
     }
 
-    public static void errorMaxLength() {
-        System.out.println(ERROR_CAR_NAME_MAX_LENGTH);
+    public static String errorMaxLength() {
+        return ERROR_CAR_NAME_MAX_LENGTH;
     }
 
-    public static void errorNameEmpty() {
-        System.out.println(ERROR_CAR_NAME_EMPTY);
+    public static String errorNameEmpty() {
+        return ERROR_CAR_NAME_EMPTY;
     }
 
-    public static void errorNumberFormat() {
-        System.out.println(ERROR_NUMBER_FORMAT);
+    public static String errorNumberFormat() {
+        return ERROR_NUMBER_FORMAT;
     }
 }
