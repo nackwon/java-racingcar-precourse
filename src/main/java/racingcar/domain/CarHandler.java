@@ -21,11 +21,7 @@ public class CarHandler {
     }
 
     private static Cars startInputCarName() {
-        String inputName = RacingGameInputView.inputCarName();
-        if (!CarName.isCheckValidateCarName(inputName)) {
-            RacingGameInputView.inputCarName();
-        }
-        return new Cars(inputName);
+        return new Cars(RacingGameInputView.inputCarName());
     }
 
     private static int startInputRoundNumber() {
