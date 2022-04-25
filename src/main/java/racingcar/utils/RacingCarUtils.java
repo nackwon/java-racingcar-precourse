@@ -25,14 +25,11 @@ public class RacingCarUtils {
     }
 
     private static boolean isCheckNumberFormat(String sNumber) {
-        int result = 0;
         try {
-            result = Integer.parseInt(sNumber);
+            if(Integer.parseInt(sNumber) <= ZERO) {
+                throw new IllegalArgumentException(ERROR_NUMBER_FORMAT);
+            }
         } catch (Exception e) {
-            throw new IllegalArgumentException(ERROR_NUMBER_FORMAT);
-        }
-
-        if(result <= ZERO) {
             throw new IllegalArgumentException(ERROR_NUMBER_FORMAT);
         }
         return true;
